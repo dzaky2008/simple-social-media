@@ -1,7 +1,8 @@
+RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 FROM ubuntu:22.04
 
-RUN apt update -y && \
-    DEBIAN_FRONTEND=noninteractive apt install -y apache2 \
+RUN apt-get update --fix-missing && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing apache2 \
     php \
     npm \
     php-xml \
