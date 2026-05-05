@@ -1,7 +1,6 @@
 FROM ubuntu:22.04
-RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 
-RUN apt-get update --fix-missing && \
+RUN apt-get update --fix-missing && apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing apache2 \
     php \
     npm \
